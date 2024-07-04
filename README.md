@@ -1,0 +1,18 @@
+This is a production project. 
+
+Amazon’s Elastic Container Service (ECS) is a fully managed container orchestration platform that's used to manage and run containerized applications on clusters of EC2 instances.
+If you're new to ECS, it's recommended to experiment with it in the web console first. Rather than configuring all the underlying network resources, IAM roles and policies, and logs manually, let ECS create these for you. You'll just need to set up ECS, a Load Balancer, Listener, Target Group, and RDS. Once you feel comfortable then move on to Terraform.
+
+Create a platform for an e-learning company
+The platform is for e-learning company, they want to take advantage of Government programme to retrain graduates into IT. Currently they don’t have a robust platform that can take care of all the needs of their students. They want to build a more robust platform that can orchestrate their docker applications and also that can scale. 
+
+Use Terraform to build this environment. Remember they have containerised all their applications. All their images are stored in ECR. 
+
+Make sure you build a code for DEV environment, TEST environment, STAGING environment and PROD Environment. The Port for PROD should be 443. All other environment is port 80. 
+
+Push all your finished codes to a git repo.
+
+Create a personal jira account to help you manage this project. Make sure to update the jira ticket daily. You can get a free standard jira account. 
+
+Provision a Jenkins server using a Jenkinsfile to deploy your code to AWS platform.  
+

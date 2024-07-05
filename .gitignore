@@ -39,3 +39,4 @@ terraform.rc
 *.terraform*
 .DS_store
 locals.tf
+jenkinsfile

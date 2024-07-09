@@ -284,3 +284,11 @@ variable "fargate-cpu" {
 variable "fargate-memory" {
   type = number
 }
+
+variable "ecs_region" {
+  type = string
+}
+
+variable "ecs_prefix" {
+  type = string
+}

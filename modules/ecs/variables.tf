@@ -89,3 +89,14 @@ variable "fargate-memory" {
 variable "ecr-repo" {
   type = any
 }
+
+variable "log_group_name" {
+  type = string
+}
+variable "ecs_region" {
+  type = string
+}
+
+variable "ecs_prefix" {
+  type = string
+}

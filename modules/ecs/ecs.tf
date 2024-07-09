@@ -4,8 +4,41 @@ resource "aws_ecs_cluster" "test-cluster" {
   depends_on = [var.ecr-repo]
 }
 
-
 resource "aws_ecs_task_definition" "test-task" {
+  family                   = var.task-family
+  container_definitions    = jsonencode([
+    {
+      name      = var.task-name
+      image     = var.ecr-repo-url
+      essential = true
+      portMappings = [
+        {
+          containerPort = var.container-port
+          hostPort      = var.container-port
+        }
+      ]
+      memory = var.fargate-memory
+      cpu    = var.fargate-cpu
+      logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"        = var.log_group_name
+          "awslogs-region"       = var.ecs_region
+          "awslogs-stream-prefix"= var.ecs_prefix
+        }
+      }
+    }
+  ])
+  requires_compatibilities = ["FARGATE"]
+  network_mode             = "awsvpc"
+  memory                   = var.fargate-memory
+  cpu                      = var.fargate-cpu
+  execution_role_arn       = var.ecs_task_execution_role
+}
+
+
+
+/*resource "aws_ecs_task_definition" "test-task" {
   family                   = var.task-family
   container_definitions    = <<DEFINITION
   [
@@ -13,6 +46,14 @@ resource "aws_ecs_task_definition" "test-task" {
       "name": "${var.task-name}",
       "image": "${var.ecr-repo-url}",
       "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": ${var.log_group_name},
+          "awslogs-region": ${var.ecs_region},
+          "awslogs-stream-prefix": ${var.ecs_prefix}
+        }
+      }
       "portMappings": [
         {
           "containerPort": ${var.container-port},
@@ -21,6 +62,7 @@ resource "aws_ecs_task_definition" "test-task" {
       ],
       "memory": ${var.fargate-memory},
       "cpu": ${var.fargate-cpu}
+      
     }
   ]
   DEFINITION
@@ -31,7 +73,7 @@ resource "aws_ecs_task_definition" "test-task" {
   //memory                   = var.fargate-memory
   //cpu                      = var.fargate-cpu
   execution_role_arn = var.ecs_task_execution_role
-}
+}*/
 
 
 

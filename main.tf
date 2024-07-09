@@ -103,6 +103,9 @@ module "Test-ECS" {
   fargate-cpu                    = var.fargate-cpu
   fargate-memory                 = var.fargate-memory
   ecr-repo                       = module.Test-ecr.ecr-repo
+  ecs_prefix = var.ecs_prefix
+  ecs_region = var.ecs_region
+  log_group_name = module.Test-cloudwatch.log_group_name
 }
 
 

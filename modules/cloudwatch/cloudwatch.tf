@@ -1,5 +1,5 @@
 resource "aws_cloudwatch_log_group" "test-log-group" {
-  name              = "/ecs/test-container"
+  name              = "ecs/test-container"
   retention_in_days = 30
 
   tags = var.cloudwatch-tags

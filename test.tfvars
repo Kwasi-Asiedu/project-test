@@ -97,3 +97,6 @@ ecs-service-sg-egress = [{
 log-stream-name = "test-log-stream"
 fargate-cpu     = 256
 fargate-memory  = 512
+
+ecs_region = "us-west-1"
+ecs_prefix = "ecs"

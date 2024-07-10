@@ -1,18 +1,32 @@
-This is a production project. 
+Production Project: E-Learning Platform on AWS ECS
+Objective
+This project aims to use Amazon's Elastic Container Service (ECS) to build a highly available and scalable e-learning platform. The goal is to leverage government programs to retrain graduates into IT professionals. The new platform will address current limitations and provide a robust solution to meet all student needs.
 
-Amazon’s Elastic Container Service (ECS) is a fully managed container orchestration platform that's used to manage and run containerized applications on clusters of EC2 instances.
-If you're new to ECS, it's recommended to experiment with it in the web console first. Rather than configuring all the underlying network resources, IAM roles and policies, and logs manually, let ECS create these for you. You'll just need to set up ECS, a Load Balancer, Listener, Target Group, and RDS. Once you feel comfortable then move on to Terraform.
+Overview
+The platform was built using Terraform to ensure scalability and robustness. It integrates seamlessly with containerized applications, with all images securely stored in Amazon ECR (Elastic Container Registry).
 
-Create a platform for an e-learning company
-The platform is for e-learning company, they want to take advantage of Government programme to retrain graduates into IT. Currently they don’t have a robust platform that can take care of all the needs of their students. They want to build a more robust platform that can orchestrate their docker applications and also that can scale. 
+Features
+Custom Networking Infrastructure:
 
-Use Terraform to build this environment. Remember they have containerised all their applications. All their images are stored in ECR. 
+VPC (Virtual Private Cloud)
+ECS (Elastic Container Service)
+Load Balancer
+RDS (Relational Database Service)
+CloudWatch for monitoring
+IAM roles for security
+Environment Setup:
 
-Make sure you build a code for DEV environment, TEST environment, STAGING environment and PROD Environment. The Port for PROD should be 443. All other environment is port 80. 
+Separate configurations for DEV, TEST, STAGING, and PROD environments
+PROD environment uses port 443
+Other environments use port 80
+Automation:
 
-Push all your finished codes to a git repo.
-
-Create a personal jira account to help you manage this project. Make sure to update the jira ticket daily. You can get a free standard jira account. 
-
-Provision a Jenkins server using a Jenkinsfile to deploy your code to AWS platform.  
-
+Jenkins controller set up to automate the deployment of the infrastructure on AWS
+Best Practices
+Remote Backend:
+Ensure the creation of a remote backend to prevent multiple engineers from using the state file simultaneously. This helps avoid infrastructure duplication or state file corruption.
+Getting Started
+Prerequisites
+Terraform installed
+AWS CLI configured
+Jenkins server set up (if you wish to use Jenkins for automation)

@@ -34,7 +34,7 @@ module "Test-ALB" {
   alb-security-group-ingress = var.alb-security-group-ingress
   pub_subs                   = module.Test-VPC.public_subnets
   project-name               = var.project-name
-  acm_certificate            = module.Test-acm_certificate.acm_certificate
+  acm_certificate            = module.Test-acm_certificate.acm_certificate  
 }
 
 

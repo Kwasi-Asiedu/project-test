@@ -11,6 +11,7 @@ resource "aws_security_group" "DT-ALB-SG" {
       protocol    = "tcp"
       #cidr_blocks = [ aws_vpc.DT-VPC.cidr_block ]
       cidr_blocks = ["0.0.0.0/0"]
+      #cidr_blocks = [var.alb_cidr]
     }
   }
 

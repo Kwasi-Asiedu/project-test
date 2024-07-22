@@ -39,3 +39,7 @@ variable "pub_subs" {
   type = list(any)
 }
 
+variable "alb_cidr" {
+  type = any
+}
+

@@ -9,3 +9,7 @@ output "public_subnets" {
 output "private_subnets" {
   value = [aws_subnet.priv_subs[0], aws_subnet.priv_subs[1]]
 }
+
+/*output "vpc_cidr" {
+  value = aws_vpc.DT-vpc.cidr_block
+}*/

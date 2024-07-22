@@ -42,3 +42,7 @@ variable "pub_subs" {
 variable "acm_certificate" {
   type = any
 }
+
+/*variable "alb_cidr" {
+  type = string
+}*/

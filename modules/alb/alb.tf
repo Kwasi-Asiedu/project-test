@@ -9,7 +9,6 @@ resource "aws_security_group" "DT-ALB-SG" {
       from_port   = ingress.value.port
       to_port     = ingress.value.port
       protocol    = "tcp"
-      #cidr_blocks = [ aws_vpc.DT-VPC.cidr_block ]
       cidr_blocks = ["0.0.0.0/0"]
       #cidr_blocks = [var.alb_cidr]
     }
@@ -23,7 +22,6 @@ resource "aws_security_group" "DT-ALB-SG" {
       from_port   = egress.value.port
       to_port     = egress.value.port
       protocol    = "-1"
-      #cidr_blocks = [ aws_vpc.DT-VPC.cidr_block ]
       cidr_blocks = ["0.0.0.0/0"]
     }
   }

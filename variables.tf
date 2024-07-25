@@ -6,10 +6,6 @@ variable "region" {
 
 variable "tags" {
   type = map(any)
-  /*default = {
-    Name : "Mac-VPC"
-    Project : "test"
-  }*/
 }
 
 variable "cloudwatch-tags" {

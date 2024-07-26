@@ -92,12 +92,12 @@ Ensure the creation of a remote backend to prevent multiple engineers from using
 - Jenkins server set up (if you wish to use Jenkins for automation)
 
 ## How to run Terraform via terminal
-To initialize, run:
+### To initialize, run:
 ```
 terraform init
 ```
 
-To apply, run:
+**To apply, run:**
 ```
 terraform apply -var-file="dev.tfvars" -auto-approve
 ```

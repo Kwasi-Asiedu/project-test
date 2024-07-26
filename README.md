@@ -30,3 +30,11 @@ Prerequisites
 Terraform installed
 AWS CLI configured
 Jenkins server set up (if you wish to use Jenkins for automation)
+
+```init
+terraform init
+
+``kkkk
+
+
+## Contribute

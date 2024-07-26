@@ -32,25 +32,13 @@ AWS CLI configured
 Jenkins server set up (if you wish to use Jenkins for automation)
 
 
-```
-terraform init
-```
-
-## Contribute
-
 # Production Project: E-Learning Platform
 
 ## Objective
-This project aims to use Amazon's Elastic Container Service (ECS) to build a 
-highly available and scalable e-learning platform. The goal is to leverage 
-government programs to retrain graduates into IT professionals. The new platform
-will address current limitations and provide a robust solution to meet all 
-student needs.
+This project aims to use Amazon's Elastic Container Service (ECS) to build a highly available and scalable e-learning platform. The goal is to leverage government programs to retrain graduates into IT professionals. The new platformwill address current limitations and provide a robust solution to meet all student needs.
 
 ## Overview
-The platform was built using Terraform to ensure uniformity, re-useability and
-robustness. It integrates seamlessly with containerized applications, with all 
-images securely stored in Amazon ECR (Elastic Container Registry).
+The platform was built using Terraform to ensure uniformity, re-useability and robustness. It integrates seamlessly with containerized applications, with all images securely stored in Amazon ECR (Elastic Container Registry).
 
 ## Features
 ### Infrastructure:
@@ -92,25 +80,35 @@ Ensure the creation of a remote backend to prevent multiple engineers from using
 - Jenkins server set up (if you wish to use Jenkins for automation)
 
 ## How to run Terraform via terminal
-### To initialize, run:
+**To initialize, run:**
 ```
 terraform init
+```
+
+**To plan, run:**
+```
+terraform plan -var-file="dev.tfvars" 
 ```
 
 **To apply, run:**
 ```
 terraform apply -var-file="dev.tfvars" -auto-approve
 ```
-**PS:** Specify your desired environment, be it test, staging or prod.
+
+**To destroy, run:** 
+```
+terraform destroy -var-file="dev.tfvars" -auto-approve
+```
+
+**Note:** Specify your desired environment, be it test, staging or prod. E.g. "test.tfvars"
+
 
 ## How to run Jenkins
-To run the pipeline:
+### To run the pipeline:
 
-1. **Configure Jenkins:** Use this link to download terraform onto your [jenkins server](https://developer.hashicorp.com/terraform/install?product_intent=terraform) 
-Ensure Jenkins is set up with the necessary plugins (e.g., Terraform, AWS steps).
-2. **Create a Pipeline Job:** Add the pipeline script(jenkinsfile) to the Pipeline job directly or choose the SCM option. Be sure to use a choice parameter and set to apply or destroy.
+1. **Configure Jenkins:** Ensure Jenkins is set up with the necessary plugins (e.g., Terraform, AWS steps). Use this [link](https://developer.hashicorp.com/terraform/install?product_intent=terraform) to dowload terraform onto the jenkins server.
+2. **Create a Pipeline Job:** Add the pipeline script(jenkinsfile) to the Pipeline job directly or choose the SCM option. Make sure to use a choice parameter and configure it to select either "apply" or "destroy."
 3. **Trigger the Build:** Start the build process to execute the defined stages.
-
 
 
 # Contributing

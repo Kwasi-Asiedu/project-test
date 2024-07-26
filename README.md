@@ -103,6 +103,13 @@ terraform apply -var-file="dev.tfvars" -auto-approve
 ```
 **PS:** Specify your desired environment, be it test, staging or prod.
 
+To run the pipeline:
+
+1. Configure Jenkins: Ensure Jenkins is set up with the necessary plugins (e.g., Git, Pipeline).
+
+2. Create a Pipeline Job: Add this pipeline script to a Jenkins Pipeline job.
+3. Trigger the Build: Start the build process to execute the defined stages.
+
 
 # Contributing
 Feel free to open issues or submit pull requests with improvements. Contributions are always welcome.

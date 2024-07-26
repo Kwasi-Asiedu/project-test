@@ -103,12 +103,13 @@ terraform apply -var-file="dev.tfvars" -auto-approve
 ```
 **PS:** Specify your desired environment, be it test, staging or prod.
 
+## How to run Jenkins
 To run the pipeline:
 
-1. Configure Jenkins: Ensure Jenkins is set up with the necessary plugins (e.g., Git, Pipeline).
+1. **Configure Jenkins:** Ensure Jenkins is set up with the necessary plugins (e.g., Terraform, AWS steps).
+2. **Create a Pipeline Job:** Add the pipeline script(jenkinsfile) to the Pipeline job directly or choose the SCM option. Be sure to use a choice parameter and set to apply or destroy.
+3. **Trigger the Build:** Start the build process to execute the defined stages.
 
-2. Create a Pipeline Job: Add this pipeline script to a Jenkins Pipeline job.
-3. Trigger the Build: Start the build process to execute the defined stages.
 
 
 # Contributing

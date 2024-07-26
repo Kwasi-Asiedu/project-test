@@ -106,7 +106,8 @@ terraform apply -var-file="dev.tfvars" -auto-approve
 ## How to run Jenkins
 To run the pipeline:
 
-1. **Configure Jenkins:** Ensure Jenkins is set up with the necessary plugins (e.g., Terraform, AWS steps).
+1. **Configure Jenkins:** Use this link to download terraform onto your [jenkins server](https://developer.hashicorp.com/terraform/install?product_intent=terraform) 
+Ensure Jenkins is set up with the necessary plugins (e.g., Terraform, AWS steps).
 2. **Create a Pipeline Job:** Add the pipeline script(jenkinsfile) to the Pipeline job directly or choose the SCM option. Be sure to use a choice parameter and set to apply or destroy.
 3. **Trigger the Build:** Start the build process to execute the defined stages.
 
